@@ -1,7 +1,7 @@
 package se.lexicon;
 
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -27,9 +27,18 @@ public class ArrayExamplesTest {
 
         //Assert
         int expected = 9;
-        Assertions.assertEquals(expected, actual, "The max number is 9");
+        assertEquals(expected, actual, "The max number is 9");
 
     }
+
+    // Using Prompt engineering to test the rest scenarios: Few shot prompting
+    /*
+    Prompt:
+    Generate a JUnit 5 test case for a method findMaxNumber that handles an array with negative numbers and validates the result.
+    Here is an Example that handles an array with positive numbers and validates the result.
+    Example: code for "Find Max Number With Positive Numbers"
+
+     */
 
     @Test
     @DisplayName("Find Max Number With Negative Numbers")
@@ -43,8 +52,10 @@ public class ArrayExamplesTest {
 
         // Assert
         int expected = -2;
-        Assertions.assertEquals(expected, actual, "The max number should be -2");
+        assertEquals(expected, actual, "The max number should be -2");
     }
+
+
 
 
 }
