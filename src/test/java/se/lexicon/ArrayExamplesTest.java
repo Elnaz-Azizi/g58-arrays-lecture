@@ -27,7 +27,7 @@ public class ArrayExamplesTest {
 
         //Assert
         int expected = 9;
-        assertEquals(expected, actual, "The max number is 9");
+       assertEquals(expected, actual, "The max number is 9");
 
     }
 

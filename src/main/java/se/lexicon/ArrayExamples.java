@@ -1,6 +1,8 @@
 package se.lexicon;
 
 
+import java.util.Arrays;
+
 public class ArrayExamples {
     public static void main(String[] args) {
 
@@ -20,6 +22,8 @@ public class ArrayExamples {
         //Finding a max number
         int[] numbers = {20, 66, 20, 14};
         int result = findMaxNumber(numbers);
+
+        ex6();
 
     }
 
@@ -98,6 +102,68 @@ public class ArrayExamples {
         //maxnumber=14>66    66
 
 
+    }
+
+
+    // merging two arrays
+    public static void ex5() {
+        // Two string arrays to be merged
+        String[] array1 = {"apple", "banana", "orange"};
+        String[] array2 = {"grape", "kiwi", "mango"};
+
+        // Calculate the length of the merged array
+        int mergedLength = array1.length + array2.length;
+        // Create a new array with size equal to the sum of the lengths of the two arrays
+        String[] mergedArray = new String[mergedLength];
+
+        // Copy elements from the first array to the merged array
+        for (int i = 0; i < array1.length; i++) {
+            mergedArray[i] = array1[i];
+        }
+
+        // Copy elements from the second array to the merged array
+        for (int i = 0; i < array2.length; i++) {
+            mergedArray[array1.length + i] = array2[i];
+        }
+        System.out.println("Merged Array:" + Arrays.toString(mergedArray));
+
+    }
+
+    // Example of working with a two-dimensional array
+    public static void ex6() {
+        // Declare a 3x3(3 by 3) two-dimensional array of Strings (a "board" for this example)
+        String[][] board = new String[3][3];
+        // Two-dimensional arrays can be visualized as a grid or table:
+
+        // column [0] [1] [2]
+        // row[0]  O   X   O
+        // row[1]  O   X   X
+        // row[2]  X   O   X
+
+        // Fill the board with values ("O" and "X") for each cell
+        board[0][0] = "O";  // First row, first column
+        board[0][1] = "X";  // First row, second column
+        board[0][2] = "O";  // First row, third column
+
+        board[1][0] = "O";  // Second row, first column
+        board[1][1] = "X";  // Second row, second column
+        board[1][2] = "X";  // Second row, third column
+
+        board[2][0] = "X";  // Third row, first column
+        board[2][1] = "O";  // Third row, second column
+        board[2][2] = "X";  // Third row, third column
+
+        // Nested loop to iterate over the two-dimensional array (the board)
+        // Outer loop goes through each row
+        for (int i = 0; i < board.length; i++) {
+            // Inner loop goes through each column of the current row
+            for (int j = 0; j < board[i].length; j++) {
+                // Print the value in the current row and column, followed by a tab for spacing
+                System.out.print(board[i][j] + "\t");
+            }
+            // After each row, move to the next line to display the next row correctly
+            System.out.println("\n");
+        }
     }
 
 
